@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zoid Demo</title>
+    <style>
+      #container{
+        min-height: 220px;
+        border: 1px dotted red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <div style="margin: 4em 0;border-top: 5px solid green;">
+      <iframe src="https://designkojo.com/allow-embedding-content-cross-origin-iframes"></iframe>
+    </div>
+
+    <script src="/sdk.js"></script>
+
+    <script>
+      pepper.Components.LoginComponent({
+          prefilledEmail: "foo@bar.com",
+          env: "demo",
+          onLogin: function (email) {
+            console.log("User logged in with email:", email);
+          },
+        })
+        .render("#container");
+    </script>
+
+
+
+  </body>
+</html>
